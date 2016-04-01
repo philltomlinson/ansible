@@ -37,10 +37,10 @@ class ActionModule(ActionBase):
 
         result = super(ActionModule, self).run(tmp, task_vars)
 
-        if self._play_context.check_mode:
-            result['skipped'] = True
-            result['msg'] = 'check mode not (yet) supported for this module'
-            return result
+        # if self._play_context.check_mode:
+        #     result['skipped'] = True
+        #     result['msg'] = 'check mode not (yet) supported for this module'
+        #     return result
 
         source            = self._task.args.get('src', None)
         dest              = self._task.args.get('dest', None)
